@@ -1,54 +1,81 @@
+ Skip to content
+
+    Explore
+    Gist
+    Blog
+    Help
+
+    zheqing zheqing
+
+You don't have any verified emails. We recommend verifying at least one email.
+
+Email verification helps our support team help you in case you have any email issues or lose your password.
+
+    1
+    1
+    0
+
+public deanwenick/web130
+
+web130 / classwork / 01-css-dropdown / styles.css
+Dean Wenick deanwenick 7 minutes ago
+css dropdown
+
+1 contributor
+file 54 lines (45 sloc) 0.769 kb
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 	
+
 body {
   font-family: sans-serif;
-  
 }
 
 #page {
   width: 70%;
-  margin: 0 auto;
+  margin: 0 auto
 }
 
 /* Navigation styles */
 #main-menu ul {
   list-style-type: none;
   padding-left: 10px;
-  position: relative;
+  position: relative
 }
 
-#main-menu li (
+#main-menu li {
   float: left
-)
+}
 
 #main-menu li a {
   background: #778899;
-  text-decoration:none;
+  text-decoration: none;
   padding: 10px 20px;
-  display: block;
+  display: block
 }
 
 #main-menu li a:hover {
   background: skyblue;
-  color: black;
+  color: black
 }
 
-/* sub menu styles*/
-#main-menu ul li ul (
+/* sub menu styles */
+#main-menu ul li ul {
   position: absolute;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s liner 0.5s, opacity 0.5s linear;
-)
+  transition: visibility 0s linear 1s, opacity 1s linear
+}
 
-#main-menu ul li:hover ul (
+#main-menu ul li:hover ul {
   visibility: visible;
   opacity: 1;
-  transition-delay: 0s;
-)
+  transition-delay: 0s
+}
 
-#main-menu ul li ul li (
+#main-menu ul li ul li {
   float: none;
-  background: #778899;
-)
+  background: #778899
+}
 
-
-
+#main-menu ul li ul li:hover {
+  background: magenta
+}
