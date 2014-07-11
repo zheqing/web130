@@ -112,8 +112,8 @@ body {
 }
 
 #page {
-  width: 70%;
-  margin: 0 auto
+  width: 100%;
+  margin: 10px 40px 
 }
 
 /* Navigation styles */
@@ -122,10 +122,9 @@ body {
   clear: both;
 }
 
-nav {
-  margin-bottom: 10px;
-}
 
+
+/* Navigation styles */
 #main-menu ul {
   list-style-type: none;
   padding-left: 10px;
