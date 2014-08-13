@@ -3,27 +3,154 @@
 <html>
 
 	<head>
-		<meta charset="utf-8">
-		<title>Zhou ZheQing</title>
-
+    <meta charset="utf-8">
+    <title>html5 template</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <style type="text/css">
+      .error {
+      color: red;
+      }
+      .hidden {
+      display: none;
+      }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+    document.getElementById("contact-form").onsubmit = validateForm;
+    }
+    function validateForm() {
+    var validFirstName = validateTextField("first-name", "error-first-name");
+    var validLastName = validateTextField("last-name", "error-last-name");
+    var validAddress = validateTextField("address", "error-address");
+    var validCity = validateTextField("city", "error-city");
+    var validZipCode = validateTextField("zip-code", "error-zip-code");
+    var validEmail1 = validateTextField("email1", "error-email1");
+    var validEmail2 = validateTextField("email2", "error-email2");
+    var validPhone = validateTextField("phone", "error-phone");
+    var validLanguage = validateTextField("language", "error-language");
+    var validTerms = validateCheckBox("terms", "error-terms");
+    return validFirstName && validLastName && validAddress && validCity && validZipCode && validEmail1 && validEmail2 && validPhone && validLanguage && validTerms;
+    }
+    function validateTextField(fieldId, errorId){
+    //take a parameter and test any text field
+    var fieldText = document.getElementById(fieldId).value;
+    var errorSpan = document.getElementById(errorId);
+    if(fieldText === "") {
+    //show error and stay
+    errorSpan.className = "error";
+    return false;
+    } else {
+    //hide error and succeed
+    errorSpan.className = "hidden";
+    return true;
+    }
+    }
+    function validateCheckBox(fieldId, errorId){
+    //take a parameter and test any text field
+    var checkBox = document.getElementById(fieldId);
+    var errorSpan = document.getElementById(errorId);
+    if(!checkBox.checked) {
+    //show error and stay
+    errorSpan.className = "error";
+    return false;
+    } else {
+    //hide error and succeed
+    errorSpan.className = "hidden";
+    return true;
+    }
+    }
+  </script> 
 	</head>
 
 	<body>
-   
-    <script>
-	
+       <form id="contact-form" action="success.html">
+      <p>
+        <label for="first-name">First Name:
+          <input type="text" name="first-name" id="first-name">
+          <span id="error-first-name" class="hidden">* Blank</span>
+        </label>
+      </p>
+      
+      <p>
+        <label for="last-name">Last Name:
+          <input type="text" name="last-name" id="last-name">
+          <span id="error-last-name" class="hidden">* Blank</span>
+        </label>
+      </p>
+         
+      <p>
+        <label for="address">Address:
+          <input type="text" name="address" id="address">
+          <span id="error-address" class="hidden">* Blank</span>
+        </label>
+      </p>
+           
+      <p>
+        <label for="city">City:</label>
+          <select name="city" id="city">
+           <option value="">--City--</option>
+           <option value="vancouver">Vancouver</option>
+           <option value="los-angeles">Los Angeles</option>
+           <option value="new-york">New York</option>
+           <option value="seattle">Seallte</option>
+         </select>  
+      </p>
+         
+      <p>
+        <label for="zip-code">Zip Code:
+          <input type="text" name="zip-codezip-code" id="zip-code">
+          <span id="error-zip-code" class="hidden">* 5 digits</span>
+        </label>
+      </p>
+         
+      <p>
+        <label for="email1">Email-01:
+          <input type="text" name="email1" id="email1">
+          <span id="error-email1" class="hidden">* valid email structure</span>
+        </label>
+      </p>
+      
+      <p>
+        <label for="email2">Email-02:
+          <input type="text" name="email2" id="email2">
+          <span id="error-email2" class="hidden">* valid email structure</span>
+        </label>
+      </p>
+      <p>
+        <label for="phone">Phone:
+        <input type="text" name="phone" id="phone">
+        <span id="error-phone" class="hidden">* Blank</span>
+        </label>
+      </p>
+         
+      <p>
+        <label for="language">Language:
+          <input type="checkbox" id="Language" name="Language1">English
+          <input type="checkbox" id="Language" name="Language2">Spanish
+          <input type="checkbox" id="Language" name="Language3">French
+          <input type="checkbox" id="Language" name="Language4">German
+          <span id="error-language" class="hidden">* You must choose one</span>
+        </label>
+      </p>
+
+      <p>
+        <label for="terms">
+          <input type="checkbox" id="terms" name="terms">I Agree
+          <span id="error-terms" class="hidden">* You must agree</span>
+        </label>
+      </p>
+
+      <button name="submit" id="submit">Submit</button>
+      <button name="clear" id="clear">Clear</button>
+         
+    </form>  
+
+    <!--<script>
 		alert("Hello, world!");
-
 		var userName = prompt("What is your name?");
-
 		document.write("<h2>" +"Hello, "+ userName + "</h2>");
-
-		
-		
 		document.write("<img src='http://www.bsmpg.com/Portals/52884/images/C--Documents%20and%20Settings-a.horne-My%20Documents-My%20Pictures-goodjob.PNG' />");
-	
-
-	</script>
+	  </script>-->
 
 	</body>
 
