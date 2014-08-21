@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>form validation</title>
+<!-- cutom styles -->
+<link rel="stylesheet" href="css/styles.css">
+<!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+<!-- parsely depends on jquery so this order is important, custom scripts last -->
+<script src="js/jquery.js"></script>
+<script src="js/parsely.js"></script>
+<script src="js/scripts.js"></script>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+</head>
+<body>
+<form id="myForm" name="myForm" action="form_handler.php" method="POST">
+<p>
+<label for="fName">First Name:
+<input type="text" id="fName" name="fName" data-parsley-required="true">
+</label>
+</p>
+<p>
+<label for="lname">Last Name:
+<input type="text" id="lname" name="lname" data-parsley-required="true">
+</label>
+</p>
+<p>
+<label for="address">Address:
+<input type="text" id="address" name="address" data-parsley-required="true">
+</label>
+</p>
+<p>
+<label for="city">City:
+<select id="city" data-parsley-required="true">
+<option value="">Choose..</option>
+<option value="seattle">Seattle</option>
+<option value="seatac">Seatac</option>
+<option value="tacoma">Tacoma</option>
+<option value="everett">Everett</option>
+</select>
+</label>
+</p>
+<p>
+<label for="zip">Zipcode:
+<input type="text" id="zip" name="zip" data-parsley-required="true" data-parsley-type="digits" data-parsley-range="[5, 5]">
+</label>
+</p>
+<p>
+<label for="email-1">Email:
+<input type="text" id="email-1" name="email-1" data-parsley-required="true" data-parsley-type="email">
+</label>
+</p>
+<p>
+<label for="email-2">Re-enter Email:
+<input type="text" id="email-2" name="email-2" data-parsley-required="true" data-parsley-type="email" data-parsley-equalto="#email-1">
+</label>
+</p>
+<p>
+<label for="languages">What languages do you speak:</label>
+English <input type="checkbox" name="languages" id="english" value="english" data-parsley-mincheck="1" data-parsley-required="true" checked>
+French <input type="checkbox" name="languages" value="french">
+Spanish <input type="checkbox" name="languages" value="spanish">
+Russian <input type="checkbox" name="languages" value="russian">
+Swahili <input type="checkbox" name="languages" value="swahili">
+<p>
+<p>
+<label for="gender">Do you own a car?:</label>
+Yes: <input type="radio" name="car" id="carYes" value="yes" data-parsley-required="true">
+No: <input type="radio" name="car" id="carNo" value="no" >
+</p>
+<button type="submit" id="submit" name="submit">Submit</button>
+</form>
+<script type="text/javascript">
+$("#myForm").parsley();
+</script>
+</body>
+</html>
